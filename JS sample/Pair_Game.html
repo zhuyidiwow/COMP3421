@@ -1,0 +1,183 @@
+<html> <head> 
+<title>	Memory </title> 
+<script language="javascript"> 
+<!-- 
+window.onerror=null; 
+	
+var mytiled = new Image(); mytiled.src = "tile.gif"; 
+var myclear = new Image(); myclear.src = "clear.gif"; 
+var myempty = new Image(); myempty.src = "empty.gif"; 
+var starttime; 
+var firstorsecondsquare = 1; 
+var firstsquare; 
+var numberofmoves = 0; 
+var secondsquare; 
+var gamewon = 0; 
+var closeold = 0; 
+var timerrunning = 1; 
+var complete; 
+var firstever = 1; 
+
+var ubx = new Array(); 
+//the following section is generated giving the contents of every box 
+ubx[12] = 1;	ubx[9] = 1;
+ubx[17] = 2;	ubx[18] = 2;
+ubx[13] = 3;	ubx[19] = 3;
+ubx[23] = 4;	ubx[2] = 4;
+ubx[8] = 5;	ubx[14] = 5;
+ubx[10] = 6;     ubx[5] = 6;
+ubx[7] = 7;	ubx[21] = 7;
+ubx[20] = 8;	ubx[3] = 8;
+ubx[6] = 9;	ubx[16] = 9;
+ubx[4] = 10;	ubx[1] = 10;
+ubx[22] = 11;	ubx[11] = 11;
+ubx[15] = 12;	ubx[24] = 12;
+	
+function trysquare(squareontest) { 
+	if( document["cell"+squareontest].src.indexOf(mytiled.src) + 1 && gamewon == 0 ) { 
+		document["cell"+squareontest].src = myclear.src; 
+		numberofmoves++; 
+		document.myform.movecount.value = numberofmoves; 
+		if( firstorsecondsquare == 1 ) { 	//if this is the first square of a pair . . .
+			 
+			if(closeold == 1 ) { //if the last two moves failed to reveal a pair, cover them up
+			 	closeold = 0; 
+				document["cell"+secondsquare].src = mytiled.src; 
+				document["cell"+firstsquare].src = mytiled.src; 
+			} 
+			//remember this as the first square 
+			firstsquare = squareontest; 
+			document["cell"+squareontest].src = myclear.src; 
+			firstorsecondsquare = 2; 
+            if( firstever == 1 ) { 
+				//start the timer at the start of the game 
+				starttime = new Date(); 
+				starttime = starttime.getTime(); 
+				myinterval = window.setInterval( "printtime()", 1); 
+				firstever = 0; 
+			} 
+		} else { 
+			//second square of a pair 
+			if( ubx[squareontest] == ubx[firstsquare] ) { //right match, blank both squares
+			 	document["cell"+squareontest].src = myempty.src; 
+				document["cell"+firstsquare].src = myempty.src; 
+				//put check for completeness here 
+				complete = 0; 
+				for( mysquare = 1; mysquare <= 24 & complete == 0; mysquare++ ) { 
+					//if all squares are uncovered, they must have won 
+					if( document["cell"+mysquare].src.indexOf(mytiled.src) + 1 ) { 
+complete = 1; } 
+				} 
+				if( complete == 0 ) { 
+					//they just won the game 
+					window.alert('You just won. And don\'t we just love you for it!'); 
+					timerrunning = 0; 
+				} 
+				firstorsecondsquare = 1; 
+			} else { 
+				// you just got that one wrong, 
+// leave them uncovered until another square is clicked on 
+				firstorsecondsquare = 1; 
+				closeold = 1; 
+				secondsquare = squareontest; 
+			} 
+		} 
+	} 
+} 
+	
+function printtime() { 
+	window.clearInterval( myinterval ); 
+	var TimeFormatted; 
+	var nowtime; 
+	if( timerrunning == 1 ) { 
+		nowtime = new Date(); 
+		nowtime = nowtime.getTime(); 
+		nowtime = nowtime - starttime; 
+		TimeFormatted = timeformat( nowtime ); 
+		document.myform.timebox.value=TimeFormatted; 
+		myinterval = window.setInterval( "printtime()", 1000); 
+		} 
+} 
+	
+function timeformat(time_in_milliseconds) { 
+	var hourdif; 
+	var mindif; 
+	var secdif; 
+	var remainder; 
+	var formattedtime; 
+	
+//calculate the time in hours, minutes and seconds 
+	hourdif = time_in_milliseconds / 3600000; 
+	mindif = hourdif % 1; 
+	hourdif -= mindif; 
+	hourdif %= 24; 
+	mindif *= 60; 
+	secdif = mindif % 1; 
+	mindif -= secdif; 
+	secdif *= 60; 
+	remainder = secdif % 1; 
+	secdif -= remainder; 
+	if( hourdif < 10 ) { hourdif = "0"+hourdif; } 
+	if( mindif < 10 ) { mindif = "0"+mindif; } 
+	if( secdif < 10 ) { secdif = "0"+secdif; } 
+	
+formattedtime = hourdif+":"+mindif+":"+secdif; 
+	return formattedtime; 
+	} 
+	
+	//--> 
+</script> 
+</head> 
+
+<body bgcolor="#8ce7e7" background="../minesweeper/backing.jpg" text="#5555ff" link="#0000ff" alink="#00ff00" vlink="#0000ff"> 
+
+<table border=1 cellpadding=0 cellspacing=0> 
+<tr>
+	<td background="train.gif" height=80 width=80><a href="javascript:trysquare(1)"><img src="tile.gif" height=80 width=80 border=0 name="cell1"></a></td>
+	<td background="caterpillar.gif" height=80 width=80><a href="javascript:trysquare(2)"><img src="tile.gif" height=80 width=80 border=0 name="cell2"></a></td>
+	<td background="pyramid.gif" height=80 width=80><a href="javascript:trysquare(3)"><img src="tile.gif" height=80 width=80 border=0 name="cell3"></a></td>
+	<td background="train.gif" height=80 width=80><a href="javascript:trysquare(4)"><img src="tile.gif" height=80 width=80 border=0 name="cell4"></a></td>
+	<td background="heart.gif" height=80 width=80><a href="javascript:trysquare(5)"><img src="tile.gif" height=80 width=80 border=0 name="cell5"></a></td>
+	<td background="flower.gif" height=80 width=80><a href="javascript:trysquare(6)"><img src="tile.gif" height=80 width=80 border=0 name="cell6"></a></td>
+</tr>
+	<tr>
+	<td background="sub.gif" height=80 width=80><a href="javascript:trysquare(7)"><img src="tile.gif" height=80 width=80 border=0 name="cell7"></a></td>
+	<td background="guitar.gif" height=80 width=80><a href="javascript:trysquare(8)"><img src="tile.gif" height=80 width=80 border=0 name="cell8"></a></td>
+	<td background="happy.gif" height=80 width=80><a href="javascript:trysquare(9)"><img src="tile.gif" height=80 width=80 border=0 name="cell9"></a></td>
+	<td background="heart.gif" height=80 width=80><a href="javascript:trysquare(10)"><img src="tile.gif" height=80 width=80 border=0 name="cell10"></a></td>
+	<td background="plane.gif" height=80 width=80><a href="javascript:trysquare(11)"><img src="tile.gif" height=80 width=80 border=0 name="cell11"></a></td>
+	<td background="happy.gif" height=80 width=80><a href="javascript:trysquare(12)"><img src="tile.gif" height=80 width=80 border=0 name="cell12"></a></td>
+	</tr>
+	<tr>
+	<td background="spider.gif" height=80 width=80><a href="javascript:trysquare(13)"><img src="tile.gif" height=80 width=80 border=0 name="cell13"></a></td>
+	<td background="guitar.gif" height=80 width=80><a href="javascript:trysquare(14)"><img src="tile.gif" height=80 width=80 border=0 name="cell14"></a></td>
+	<td background="eye.gif" height=80 width=80><a href="javascript:trysquare(15)"><img src="tile.gif" height=80 width=80 border=0 name="cell15"></a></td>
+	<td background="flower.gif" height=80 width=80><a href="javascript:trysquare(16)"><img src="tile.gif" height=80 width=80 border=0 name="cell16"></a></td>
+	<td background="sad.gif" height=80 width=80><a href="javascript:trysquare(17)"><img src="tile.gif" height=80 width=80 border=0 name="cell17"></a></td>
+	<td background="sad.gif" height=80 width=80><a href="javascript:trysquare(18)"><img src="tile.gif" height=80 width=80 border=0 name="cell18"></a></td>
+	</tr>
+	<tr>
+	<td background="spider.gif" height=80 width=80><a href="javascript:trysquare(19)"><img src="tile.gif" height=80 width=80 border=0 name="cell19"></a></td>
+	<td background="pyramid.gif" height=80 width=80><a href="javascript:trysquare(20)"><img src="tile.gif" height=80 width=80 border=0 name="cell20"></a></td>
+	<td background="sub.gif" height=80 width=80><a href="javascript:trysquare(21)"><img src="tile.gif" height=80 width=80 border=0 name="cell21"></a></td>
+	<td background="plane.gif" height=80 width=80><a href="javascript:trysquare(22)"><img src="tile.gif" height=80 width=80 border=0 name="cell22"></a></td>
+	<td background="caterpillar.gif" height=80 width=80><a href="javascript:trysquare(23)"><img src="tile.gif" height=80 width=80 border=0 name="cell23"></a></td>
+	<td background="eye.gif" height=80 width=80><a href="javascript:trysquare(24)"><img src="tile.gif" height=80 width=80 border=0 name="cell24"></a></td>
+</tr>
+</table> 
+
+<form name="myform" id="myform" method="post" action="index.php"> 
+<p> 
+Moves: <input type="text" name="movecount" size=4 value=""> 
+</p> 
+<p> 
+Time: <input type="text" name="timebox" size=9 value=""> 
+</p> 
+<p> 
+<input type="submit" value="Restart">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a href="../">Back to games</a> 
+</p> 
+</form> 
+</body> 
+</html>
+

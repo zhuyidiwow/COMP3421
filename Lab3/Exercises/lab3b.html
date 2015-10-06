@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript">
+    function validate() {
+        alert("1");
+        var REname = /^[a-zA-Z\s]+$/;
+        var REemail = /^[\w]+(\.[\w]+)*@([\w\-]+\.)+[a-zA-Z]{2,7}$/;
+        var REbirth =  /^[\d]{2}[\-][\d]{2}[\-][\d]{4}$/;
+        var REmobile = /^[0-9\s\(\)\+\-]{8,15}$/;
+        alert("2");
+        var name = document.getElementById("name").value;//get the whole object
+        var email = document.getElementById("email");
+        var birth = document.getElementById("birth");
+        var mobile = document.getElementById("mobile");
+        var msg = "";
+        alert("3");
+    
+        if (!REname.test(name)) 
+            msg += "- name\n";
+        if (!REemail.test(email))
+            msg += "- email address\n";
+        if (!REbirth.test(birth))
+            msg += "- birthday\n";
+        if (!REmobile.test(mobile))
+            msg += "- mobile number\n";
+        alert("4");
+        if (msg != "")
+            alert("The following inputs are invalid.\n" + msg);
+        else
+            alert("All inputs are valid.");
+        alert("5");
+    }
+</script>
+</head>
+
+<body>
+    <form name="fm">
+    <pre style="font-family:san serif;font-size:16px">
+        English Name:   <input type="text" name="name" id="name" />
+        Email address:  <input type="text" name="email" id="email" />
+        Birthday:       <input type="date" name="birth" id="birth" />
+        Mobile number:  <input type="text" name="mobile" id="mobile" />
+        <input type="button" value="Validate" onclick="validate()"/> 
+    </pre>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+
+<script type="text/javascript">
+
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.shadowOffsetX = 5;
+cxt.shadowOffsetY = 5;
+cxt.shadowBlur    = 4;
+cxt.shadowColor   = 'rgba(255, 0, 0, 0.5)';
+cxt.fillStyle     = '#00f';
+cxt.fillRect(20, 20, 150, 100);
+
+
+
+</script>
+
+</body>
+</html>
+
+
+<!--createLinearGradient(x0, y0, x1, y1) paints along a line from (x0, y0) to (x1, y1).
+createRadialGradient(x0, y0, r0, x1, y1, r1) paints along a cone between two circles. 
+The first three parameters represent the start circle, with origin (x0, y0) and radius r0. 
+The last three parameters represent the end circle, with origin (x1, y1) and radius r1.-->

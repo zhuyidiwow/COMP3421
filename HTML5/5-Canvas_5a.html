@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<canvas id="e" width="800" height="800" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+  var canvas = document.getElementById("e");
+  var context = canvas.getContext("2d");
+  var koala = new Image();
+  koala.src = "Koala.jpg";
+  koala.onload = function() {
+    for (var x = 0, y = 0;
+       x < 500 && y < 375;
+       x += 50, y += 37) {
+    context.drawImage(koala, x, y, 88, 56);
+  }
+  };
+</script>
+</body>
+</html>

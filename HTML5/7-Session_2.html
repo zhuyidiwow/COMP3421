@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<script type="text/javascript">
+
+if (sessionStorage.pagecount)
+	{
+	sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
+	}
+else
+	{
+	sessionStorage.pagecount=1;
+	}
+document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
+
+</script> 
+
+<p>Refresh the page to see the counter increase.</p>
+
+<p>Close the browser window, and try again, and the counter has been reset.</p>
+</body>
+</html>
+

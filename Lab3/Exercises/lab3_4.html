@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>COMP3421</title>
+<script type="text/javascript">
+    function maxmin() {
+        var i;
+        var in1, in2;
+        var max;
+        var min;
+        for (i=1; i<=10; i++){
+            in1 = window.prompt("Please input 10 integers (" + i + " / 10)", "");
+            in2 = parseInt(in1); 
+            if (i==1){
+                max = in2;
+                min = in2; 
+            }
+            else {
+                max = Math.max(in2, min);
+                min = Math.min(in2, min); }
+            }
+            alert("The max. number is " + max + "\n\nThe min. number is " + min); }
+</script>
+</head>
+<body onload="maxmin()"> </body>
+</html>

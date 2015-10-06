@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript animation</title> 
+<style type="text/css">
+#square {
+    width: 100px;
+	height: 100px;
+	background: red;
+    position: absolute;
+    top:0px;
+}
+</style>
+    
+<script type="text/javascript">
+var fromTop=0;
+var timesMoved=0;
+var square=null;// object
+
+function doMove() {
+square = document.getElementById("square");
+fromTop += 100;
+square.style.top = fromTop + "px";
+timesMoved += 1;
+    
+if(timesMoved > 5)
+{
+	square.style.top="0px";
+	fromTop = 0;
+    timesMoved = 0;
+}
+    
+} // call doMove in 500msec
+
+function init() {
+ var timer;
+ timer = setInterval(doMove,500);
+} 
+</script> 
+</head>
+<body onload = init()> 
+
+    <div id="square">
+        COMP3421 
+    </div>
+</body> 
+</html>

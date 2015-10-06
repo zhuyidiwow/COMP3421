@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>COMP3421 lab2_4</title>
+<script type = "text/javascript">
+function quiz(){
+    var x = Math.floor(100*Math.random());
+    var y = Math.floor(100*Math.random());
+    var z = Math.floor(3*Math.random());
+    var calResult;
+    var numInput;
+    
+    switch (z) {
+        case 0:
+            numInput = prompt(x + " + " + y + " = ?");
+            calResult = x + y;
+            break;
+        case 1:
+            calResult = x - y;
+            numInput = prompt(x + " - " + y + " = ?");
+            break;
+        case 2:
+            calResult = x * y;
+            numInput = prompt(x + " * " + y + " = ?");
+            break;
+        default:
+            alert("Something happened");
+}
+    if (numInput == calResult){
+        alert("Great! Your answer is correct!");
+    }
+    else {
+        alert("Sorry! Your answer is incorrect! The correct answer should be " + calResult);
+    }
+}
+</script> 
+</head> 
+
+<body>
+<button onclick="quiz()">Do the Quiz!</button>
+</body>
+</html>

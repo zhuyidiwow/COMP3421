@@ -1,0 +1,115 @@
+<html >
+
+<head><title>COMP320 JavaScript Tutorial</title></head>
+
+<script type="text/javascript"> function getCheckedValue(radioObj) {
+    if(!radioObj) 
+        return "";
+    var radioLength = radioObj.length;          
+    if(radioLength == undefined)
+        if(radioObj.checked)
+            return radioObj.value;
+        else
+            return "";
+    for(var i = 0; i < radioLength; i++) {  
+        if(radioObj[i].checked) {
+            return radioObj[i].value; }
+    }
+    return ""; 
+}
+    
+function validate_form() { 
+    var err_msg = '';
+    var name = document.form_register.name.value; 
+    var age = document.form_register.age.value;
+
+    if(name == '') {
+        err_msg += "Name must not be empty"; 
+        err_msg += "\n";
+    }
+    if(age == '') {
+        err_msg += "Age must not be empty"; 
+        err_msg += "\n";
+    } else if (!(!isNaN(age) && age > 0)) {
+        err_msg += "Age must be a positive integer"; 
+        err_msg += "\n";
+    }
+    if(err_msg != '') { 
+        alert(err_msg);
+        return false; 
+    }
+    return true; 
+}
+</script>
+    
+<body>
+<font color="#FF0000">*Must be entered</font>    
+
+<form name="form_register" method="get"
+action="http://www.comp.polyu.edu.hk/~cswhchiu/MemoryLab1.php">
+<table width="100%" border="0" cellspacing="2" cellpadding="2"> 
+    <tr>
+        <td width="100">Name <font color="#FF0000">*</font>         </td> 
+        <td width="10">:</td>
+        <td><input type="text" name="name" id="name" /> </td>
+    </tr> 
+    <tr>
+        <td>Age <font color="#FF0000">*</font> </td> 
+        <td>:</td>
+        <td><input type="text" name="age" id="age" /></td>
+    </tr> 
+    <tr>
+        <td>Gender</td>
+        <td>:</td>
+        <td><input type="radio" name="gender" value="1" checked />Male
+            <input type="radio" name="gender" id="gender" value="2" />Female </td>
+    </tr> 
+    <tr>
+        <td>Country</td>
+        <td>:</td>
+        <td><select name="country">
+            <option value="Hong Kong" selected>Hong Kong</option> 
+            <option value="Japan">Japan</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="China">China</option>
+            </select> 
+        </td>
+    </tr> 
+    <tr>
+        <td>Address</td>
+        <td>:</td>
+        <td><textarea name="address" id="address" cols="45"
+rows="5"></textarea></td> 
+    </tr>
+    <tr> 
+        <td>Interest</td> 
+        <td>:</td>
+        <td>
+            <select name="interest" size="5">
+            <option value="Table Tennis">Table Tennis</option> 
+            <option value="Football">Football</option>
+            <option value="Tennis">Tennis</option>
+            </select>
+        </td> 
+    </tr>
+    <tr> 
+        <td>Language</td> 
+        <td>:</td>
+        <td>
+            <input type="checkbox" name="english" id="english" /> English 
+            <input type="checkbox" name="chinese" id="chinese" /> Chinese 
+            <input type="checkbox" name="japanese" id="japanese" /> Japanese
+        </td> 
+    </tr>
+    <tr> 
+        <td></td> 
+        <td></td>
+        <td>
+            <input name="Submit" type="submit" value="Submit" onclick="return validate_form()"/>
+            <input type="reset" name="Reset"value="Reset" />
+        </td> 
+    </tr>
+</table> 
+</form> 
+</body>
+</html>

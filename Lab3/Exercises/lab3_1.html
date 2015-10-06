@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>COMP3421</title>
+    <script type="text/javascript">
+    function string(){
+        var string1 = window.prompt("Input your first string","");
+        var string2 = window.prompt("Input your next string","");
+        
+        var l1 = string1.length;
+        var l2 = string2.length;
+
+        if (l1>=l2){
+            for(i=0; i<=l1-l2+1; i++){
+                if (string1.substr(i,l2)==string2){
+                    alert(string2 + " is a substring of " + string1);
+                    break;
+                }
+                else if (i==l1-l2){
+                    alert(string2 + " is not a substring of " + string1);
+                    alert(string1.substr(i,l2));
+                }
+            }
+        }
+        else{
+            for(i=0; i<=l2-l1; i++){
+                if (string2.substr(i,l1)==string1){
+                    alert(string1 + " is a substring of " + string2);
+                    break;
+                }
+                else if (i==l2-l1){
+                    alert(string1 + " is not a substring of " + string2);
+                    alert(string2.substr(i.l1));
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body onload="string()">hello
+</body>
+</html>

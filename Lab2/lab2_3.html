@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>COMP3421</title>
+<script type = "text/javascript">
+function numberGuessing(){
+    var number1 = Math.floor(100*Math.random());
+    var numStart = 1;
+    var numEnd = 100;
+    var bingo = false;
+    var numInput;
+    var numCheck;
+    
+    while (!bingo){
+        numInput = window.prompt("Please neter a number between " + numStart + " and " + numEnd + " :","");
+        numCheck = numInput;
+        if (numCheck == number1)
+            bingo = true;
+        else if (numCheck > number1)
+            numEnd = numCheck;
+        else
+            numStart = numCheck;
+    }
+    alert("Congratulations! You got it correct!\n\nIt is " + number1);
+}
+</script>
+</head>
+<body onload = "numberGuessing()">
+</body>
+</html>

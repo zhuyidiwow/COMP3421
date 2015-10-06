@@ -1,0 +1,101 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>COMP3421</title>
+
+<script type = "text/javascript">
+    var totalPrice;
+    var HR, HL, CR, CL, LR, LL=0;
+    
+    function order(){
+        HR = document.getElementById("numHR").value;
+        HL = document.getElementById("numHL").value;
+        CR = document.getElementById("numCR").value;
+        CL = document.getElementById("numCL").value;
+        LR = document.getElementById("numLR").value;
+        LL = document.getElementById("numLL").value;
+
+        totalPrice = 70*HR + 100*HL + 80*CR + 110*CL + 90*LR + 125*LL;
+
+        document.getElementById("tb1").value="The current total price is $" + totalPrice;
+    }
+
+    function confirm(){
+        var email = document.getElementById("email").value;
+        var contact = document.getElementById("contact").value; 
+        alert("You have ordered: \n" + HR + " regular and " + HL + " Large Ham and Cheese Pizza.\n" + CR + " regular and " + CL + " Chicken Supreme Pizza.\n" + LR + " regular and " + LL + " Land and Ocean Pizza.\nThe total price is $" + totalPrice + "\n\nYour email is:" + email + "\nYour contact phone no. is:" + contact + "\nThank you for your order!");
+    }
+</script> 
+</head> 
+
+<body>
+    <h2 style="font-family: Verdana; color:#33CCCC; text-align:center">Andy's Pizza Shop</h2>
+    <hr style="color:#66FFC2"><br>
+    
+    <table align=center border="1" bordercolor=#33CCCC style="text-align:center;font-family:Verdana" width=60%>
+    <tr style="background-color:#33CCCC">
+        <th rowspan="2">Pizza Name</th>
+        <th colspan="2">Regular</th>
+        <th colspan="2">Large</th>
+    </tr>
+    <tr style="background-color:#33CCCC">
+        <th>Price($)</th>
+        <th>Quantity</th>
+        <th>Price($)</th>
+        <th>Quantity</th>
+    </tr>    
+    <tr>
+        <td>Ham and Cheese</td>
+        <td>70</td>
+        <td><input type="number" id="numHR" value="0"/></td>
+        <td>100</td>
+        <td><input type="number" id="numHL" value="0"/></td>
+    </tr>
+    <tr>
+        <td>Chicken Supreme</td>
+        <td>80</td>
+        <td><input type="number" id="numCR" value="0"/></td>
+        <td>110</td>
+        <td><input type="number" id="numCL" value="0"/></td>
+    </tr>
+    <tr>
+        <td>Land and Ocean</td>
+        <td>90</td>
+        <td><input type="number" id="numLR" value="0"/></td>
+        <td>125</td>
+        <td><input type="number" id="numLL" value="0"/></td>
+    </tr>
+    </table><br>
+    
+    <form>
+        <table align=center border="1" bordercolor=#33CCCC style="text-align:center;font-family:Verdana" width=60%>
+        <tr>
+            <td>Member Registration Email: </td>
+            <td><input type="text" id="email"/></td>
+        </tr>
+        <tr>
+            <td>Contact Phone Number:</td>
+            <td><input type = "text" id = "contact"/></td>
+        </tr>
+        </table><br>
+    
+        <div style="text-align:center;"><button id="button1" type="button" onclick="order()" style="font-family:Verdana; font-size:20px;" >Order Now!</button></div>
+        
+    </form> 
+    <hr>
+    
+    <table align=center border="1" bordercolor=#33CCCC style="text-align:center;font-family:Verdana" width=60%>
+    <tr>
+        <td>Summary</td>
+        <td colspan="4">    
+            <textarea id="tb1" rols="5" cols="80">
+            </textarea>
+        </td> 
+    </tr>
+    </table><br>
+    
+    <div style="text-align:center;"><button id="button2" onclick="confirm()" style="font-family:Verdana; font-size:20px;" >Confirm!</button></div>
+
+</body>
+</html>

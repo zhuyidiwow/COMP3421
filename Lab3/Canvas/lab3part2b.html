@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Ball Bouncing</title> 
+<script type="text/javascript">
+    var ctx;
+    var radx=2;
+    var rady=5;
+    var x=50;
+    var y=70;
+    
+    function draw(){
+        ctx= myCanvas.getContext("2d"); 
+        ctx.clearRect(0,0,500,500); 
+        ctx.beginPath(); 
+        ctx.fillStyle="#00ff00"; 
+        ctx.arc(x,y,20,Math.PI,Math.PI*2,true); 
+        ctx.closePath();
+        ctx.fill();
+        if( x<0 || x>500)
+            radx=-radx;
+        if( y<0 || y>500) 
+            rady=-rady; 
+        x+=radx; 
+        y+=rady;
+    }
+    
+    function addcount(){
+        if(localStorage.counter){
+            localStorage.counter = Number(localStorage.counter)+1;
+        } 
+        else{
+            localStorage.counter = 1; 
+        }
+            document.getElementById("count").innerHTML = "Visit Count: " + localStorage.counter;
+        }
+    
+    setInterval(draw,1); 
+</script>
+</head>
+<body onload = "addcount()">
+<audio autoplay loop> <source src="bg.mp3"> </audio>
+<canvas id="myCanvas" width="500" height="500"></canvas> 
+<p id = "count"></p>
+</body>
+</html>

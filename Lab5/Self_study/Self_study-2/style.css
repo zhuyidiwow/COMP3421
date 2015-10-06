@@ -1,0 +1,14 @@
+/*
+Awesome Slider demo, 4th of March, 2010
+Copyright (C) 2010 Bogdan Pop of WebRaptor (R) (http://www.webraptor.eu, visit http://www.webia.info)
+Released under Creative Commons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
+If you modify this source codes and use it in your own projects you must not modify or remove the above credits. However, you may add your own below this line.
+*/
+
+/* slider controls */
+.splash-controls						{ display:block; height:2em; margin:0 auto; margin-top:1em; }
+.splash-controls a						{ display:block; width:2em; height:2em; color:green; background-color:rgba(51,51,51,0.1);
+ 										  text-align:center; line-height:2em; float:left; margin-right:0.5em; text-decoration:none; 
+										  border-radius:1em; -moz-border-radius:1em; -webkit-border-radius: 1em;
+										}
+.splash-controls a.selected				{ color:#FFF; }

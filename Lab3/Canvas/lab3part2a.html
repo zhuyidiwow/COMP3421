@@ -1,0 +1,27 @@
+<!DOCTYPE HTML> 
+<html>
+<body>
+<canvas id="e" width="1530" height="760" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+<script>
+    var canvas = document.getElementById("e"); 
+    var context = canvas.getContext("2d");
+    var koala = new Image();
+    koala.src = "Koala.jpg";
+    koala.onload = function() {
+    for (var x = 0, y = 0; y < 760; y += 76) 
+        context.drawImage(koala, x, y, 102, 76);
+    for (var x = 0, y = 380; x < 1020; x += 102) 
+        context.drawImage(koala, x, y, 102, 76);
+    for (var x = 918, y = 0; y < 760; y += 76) 
+        context.drawImage(koala, x, y, 102, 76);
+    for (var x = 918, y = 0; y < 760; y += 76) 
+        context.drawImage(koala, x, y, 102, 76);
+    for (var x = 1224, y = 380; y < 760; y += 76) 
+        context.drawImage(koala, x, y, 102, 76);
+        context.drawImage(koala, 1224, 228, 102, 76);
+    }; 
+</script> 
+</body> 
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<slideshow>
+
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_logo.jpg" width="570" height="300" alt="Evenimente by Niki Logo" />
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_new1.jpg" width="570" height="300" alt="Evenimente by Niki New 1" />
+				<a href="http://www.webraptor.eu" target="_self">Perhaps add a link?</a>
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_new2.jpg" width="570" height="300" alt="Evenimente by Niki New 2" />
+				<h1>Heading tags</h1>
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_new3.jpg" width="570" height="300" alt="Evenimente by Niki New 3" />
+				<p>Or any other info structured the way you want</p>
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_old1.jpg" width="570" height="300" alt="Evenimente by Niki old 1" />
+				<p>Screenshot from the 2007 version of the website</p>
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_old2.jpg" width="570" height="300" alt="Evenimente by Niki old 2" />
+				<p>Screenshot from the 2007 version of the website</p>
+				]]>
+			</content>
+		</slide>
+		<slide>
+			<content>
+				<![CDATA[
+				<img src="photos/nuntibistrita_old3.jpg" width="570" height="300" alt="Evenimente by Niki old 3" />
+				<p>Screenshot from the 2007 version of the website</p>
+				]]>
+			</content>
+		</slide>
+
+	</slideshow>
