@@ -1,0 +1,12 @@
+<html>
+<body>
+<p id="ex1"></p>
+<script>
+    var text = '{"name":"Memory","office":"PQ821","phone":"7731"}'
+    var obj = JSON.parse(text);
+    document.getElementById("ex1").innerHTML = 
+        obj.name + "<br>" +
+        obj.office + "<br>" +
+        obj.phone;
+</script>
+</body> </html>

@@ -1,0 +1,23 @@
+<html> <body>
+<p id="ex2"></p>
+<script>
+var employees = [
+    { "firstName":"Vincent", 
+    "lastName":"Ng"
+    },
+    {
+    "firstName":"Mary",
+    "lastName":"Chan"
+    },
+    {
+    "firstName":"Paul", "lastName":"Lam"
+    },
+    ];
+var i;
+    
+    employees[0].firstName="John";
+    for (i = 0; i <= 2; i++)
+    document.getElementById("ex2").innerHTML += employees[i].firstName + " " + employees[i].lastName + "<br>"; 
+</script>
+</body> 
+</html>

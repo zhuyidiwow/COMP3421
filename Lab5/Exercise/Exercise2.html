@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--suppress JSUnresolvedLibraryURL -->
+<html>
+<head>
+    <title>COMP3421_Lab5_Exercise2</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script>
+    $(document).ready(function(){
+        var i = 0;
+        $.fn.displayCD = function() {
+            $.get("cd_catalog.xml", function(xml) {
+                var x;
+                $(xml).find('CATALOG').each(function() {
+                    $(this).find('CD').each(function() {
+                        var index = $(this).index();
+                        if (index == i)
+                            x = "Artist: " + $(this).find('ARTIST').text() + "<br>" + "Title: " + $(this).find('TITLE').text() + "<br>" + "Year: " + $(this).find('YEAR').text(); 
+                    });
+                });
+                //noinspection JSUnusedAssignment,JSUnusedAssignment
+                $("#p1").html(x);
+            });
+        };
+        
+        $("#left").click(function() {
+            i--;
+            if (i < 0) {
+            i = 0;
+            alert("This is already the last CD!");
+            }
+            $.fn.displayCD();
+            });
+        
+        $("#right").click(function() {
+            i++;
+            if (i > 25) {
+            i = 25;
+            alert("This is already the last CD!");
+            }
+            $.fn.displayCD();
+            });
+    });
+    </script>
+</head>
+<body onload="$.fn.displayCD()">
+    <p id="p1"></p>
+    <button type="button" id="left">&lt;&lt;</button>
+    <button type="button" id="right">&gt;&gt;</button>
+</body>
+</html>

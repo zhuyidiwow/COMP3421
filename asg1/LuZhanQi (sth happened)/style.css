@@ -1,0 +1,278 @@
+div.pieces, .epieces {
+    width: 57px;
+    height: 30px;
+    background: #EEDFB0;
+    text-align: center;
+    line-height: 30px;
+}
+
+div.epieces {color: transparent; }
+
+div.empty {
+    width: 57px;
+    height: 30px;
+    background: transparent;
+    color: transparent;
+}
+
+h5 {
+    font-size: 4px;
+}
+
+h6 {
+    font-size: 7.8px;
+}
+
+#intro {
+    width: 384px;
+    height: 30px;
+    background-color: #007A99  ;
+    text-align: center;
+    font-size: 24px;
+    font-family: serif;
+    color: white;
+    position: absolute;
+    left: 780px;
+    top: 9px;
+}
+#b1 {
+    width: 250px;
+    height: 60px;
+    font-size: 24px;
+    position: absolute;
+    left: 67px;
+    top: 50px;
+}
+
+#b2 {
+    font-size: 20px;
+    width: 115px;
+    height: 50px;
+    position: absolute;
+    left: 67px;
+    top: 125px;
+}
+
+#b3 {
+    font-size: 20px;
+    width: 115px;
+    height: 50px;
+    position: absolute;
+    left: 202px;
+    top: 125px;
+}
+
+#moveTimerTitle {
+    color: black;
+    background-color: #EEE4BF;
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    left: 67px;
+    top: 190px;
+}
+#moveTimer {
+    color: black;
+    background-color: #EEE4BF;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    left: 237px;
+    top: 190px;
+}
+
+#totalTimerTitle {
+    color: black;
+    background-color: #EEE4BF;
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    left: 67px;
+    top: 235px;
+}
+#totalTimer {
+    color: black;
+    background-color: #EEE4BF;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    left: 237px;
+    top: 235px;
+}
+
+#camp {
+    width: 384px;
+    height: 30px;
+    background-color: #3395AD ;
+    text-align: center;
+    font-size: 24px;
+    font-family: serif;
+    position: absolute;
+    left: 780px;
+    top: 290px;
+    border: 1px blue;
+    
+}
+
+#A1 { position: absolute; left: 780px; top: 330px; }
+#A2 { position: absolute; left: 780px; top: 370px; }
+#A3 { position: absolute; left: 780px; top: 410px; }
+#A4 { position: absolute; left: 780px; top: 450px; }
+#A5 { position: absolute; left: 780px; top: 490px; }
+
+#A6 { position: absolute; left: 861.75px; top: 330px; }
+#A7 { position: absolute; left: 861.75px; top: 370px; }
+#A8 { position: absolute; left: 861.75px; top: 410px; }
+#A9 { position: absolute; left: 861.75px; top: 450px; }
+#A10 { position: absolute; left: 861.75px; top: 490px; }
+
+#A11 { position: absolute; left: 943.5px; top: 330px; }
+#A12 { position: absolute; left: 943.5px; top: 370px; }
+#A13 { position: absolute; left: 943.5px; top: 410px; }
+#A14 { position: absolute; left: 943.5px; top: 450px; }
+#A15 { position: absolute; left: 943.5px; top: 490px; }
+
+#A16 { position: absolute; left: 1025.25px; top: 330px; }
+#A17 { position: absolute; left: 1025.25px; top: 370px; }
+#A18 { position: absolute; left: 1025.25px; top: 410px; }
+#A19 { position: absolute; left: 1025.25px; top: 450px; }
+#A20 { position: absolute; left: 1025.25px; top: 490px; }
+
+#A21 { position: absolute; left: 1107px; top: 330px; }
+#A22 { position: absolute; left: 1107px; top: 370px; }
+#A23 { position: absolute; left: 1107px; top: 410px; }
+#A24 { position: absolute; left: 1107px; top: 450px; }
+#A25 { position: absolute; left: 1107px; top: 490px; }
+
+
+
+#soul1 {
+    width: 384px;
+    height: 30px;
+    background-color: #66AFC2 ;
+    text-align: center;
+    font-size: 24px;
+    font-family: serif;
+    position: absolute;
+    left: 780px;
+    top: 530px;
+}
+
+#grave1 {
+    width: 57px;
+    height: 464px;
+    position: absolute;
+    left: 780px;
+    top: 570px;
+}
+
+#grave2 {
+    width: 57px;
+    height: 464px;
+    position: absolute;
+    left: 861.75px;
+    top: 570px;
+}
+
+#grave3 {
+    width: 57px;
+    height: 464px;
+    position: absolute;
+    left: 943.5px;
+    top: 570px;
+}
+
+#grave4 {
+    width: 57px;
+    height: 464px;
+    position: absolute;
+    left: 1025.25px;
+    top: 570px;
+}
+
+#grave5 {
+    width: 57px;
+    height: 464px;
+    position: absolute;
+    left: 1107px;
+    top: 570px;
+}
+
+div.dead {
+    width: 57px;
+    height: 30px;
+    color:transparent; 
+    background-color: transparent;
+}
+
+div.p00 { position: absolute; left: 70px; top: 72px; }
+div.p10 { position: absolute; left: 215px; top: 72px; }
+div.p20 { position: absolute; left: 365px; top: 72px; }
+div.p30 { position: absolute; left: 514px; top: 72px; }
+div.p40 { position: absolute; left: 660px; top: 72px; }
+    
+div.p01 { position: absolute; left: 70px; top: 140px; }
+div.p11 { position: absolute; left: 215px; top: 140px; }
+div.p21 { position: absolute; left: 365px; top: 140px; }
+div.p31 { position: absolute; left: 514px; top: 140px; }
+div.p41 { position: absolute; left: 660px; top: 140px; }
+    
+div.p02 { position: absolute; left: 70px; top: 202px; }
+div.p12 { position: absolute; left: 215px; top: 202px; }
+div.p22 { position: absolute; left: 365px; top: 202px; }
+div.p32 { position: absolute; left: 514px; top: 202px; }
+div.p42 { position: absolute; left: 660px; top: 202px; }
+    
+div.p03 { position: absolute; left: 70px; top: 270px; }
+div.p13 { position: absolute; left: 215px; top: 270px; }
+div.p23 { position: absolute; left: 365px; top: 270px; }
+div.p33 { position: absolute; left: 514px; top: 270px; }
+div.p43 { position: absolute; left: 660px; top: 270px; }
+    
+div.p04 { position: absolute; left: 70px; top: 338px; }
+div.p14 { position: absolute; left: 215px; top: 338px; }
+div.p24 { position: absolute; left: 365px; top: 338px; }
+div.p34 { position: absolute; left: 514px; top: 338px; }
+div.p44 { position: absolute; left: 660px; top: 338px; }
+    
+div.p05 { position: absolute; left: 70px; top: 406px; }
+div.p15 { position: absolute; left: 215px; top: 406px; }
+div.p25 { position: absolute; left: 365px; top: 406px; }
+div.p35 { position: absolute; left: 514px; top: 406px; }
+div.p45 { position: absolute; left: 660px; top: 406px; }
+    
+div.p08 { position: absolute; left: 70px; top: 607px; }
+div.p18 { position: absolute; left: 215px; top: 607px; }
+div.p28 { position: absolute; left: 365px; top: 607px; }
+div.p38 { position: absolute; left: 514px; top: 607px; }
+div.p48 { position: absolute; left: 660px; top: 607px; }
+    
+div.p09 { position: absolute; left: 70px; top: 674px; }
+div.p19 { position: absolute; left: 215px; top: 674px; }
+div.p29 { position: absolute; left: 365px; top: 674px; }
+div.p39 { position: absolute; left: 514px; top: 674px; }
+div.p49 { position: absolute; left: 660px; top: 674px; }
+    
+div.p010 { position: absolute; left: 70px; top: 742px; }
+div.p110 { position: absolute; left: 215px; top: 742px; }
+div.p210 { position: absolute; left: 365px; top: 742px; }
+div.p310 { position: absolute; left: 514px; top: 742px; }
+div.p410 { position: absolute; left: 660px; top: 742px; }
+    
+div.p011 { position: absolute; left: 70px; top: 810px; }
+div.p111 { position: absolute; left: 215px; top: 810px; }
+div.p211 { position: absolute; left: 365px; top: 810px; }
+div.p311 { position: absolute; left: 514px; top: 810px; }
+div.p411 { position: absolute; left: 660px; top: 810px; }
+    
+div.p012 { position: absolute; left: 70px; top: 873px; }
+div.p112 { position: absolute; left: 215px; top: 873px; }
+div.p212 { position: absolute; left: 365px; top: 873px; }
+div.p312 { position: absolute; left: 514px; top: 873px; }
+div.p412 { position: absolute; left: 660px; top: 873px; }
+    
+div.p013 { position: absolute; left: 70px; top: 940px; }
+div.p113 { position: absolute; left: 215px; top: 940px; }
+div.p213 { position: absolute; left: 365px; top: 940px; }
+div.p313 { position: absolute; left: 514px; top: 940px; }
+div.p413 { position: absolute; left: 660px; top: 940px; }

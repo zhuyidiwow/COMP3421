@@ -1,0 +1,162 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />  
+   
+    <script src="jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    
+    <canvas id="background" width="769" height="1024" style="border:1px solid #c3c3c3;">
+        Your browser does not support the canvas element.
+    </canvas>
+    
+    <script>
+        var canvas = document.getElementById("background"); 
+        var context = canvas.getContext("2d");
+        var background = new Image();
+        background.src = "Background.jpg";
+        background.onload = function() {
+        context.drawImage(background, 0, 0, 769, 1024);
+        }
+    </script>
+
+</head>
+    
+<body onload="welcome()">
+    <div id = "intro">MENU
+        <button id = "b1" onclick="rules()">READ ME! (Rules)</button>
+        <button id = "b2" onclick="start()">Start</button>
+        <button id = "b3" onclick="stop()">Stop</button>
+        <div id = "moveTimerTitle">Move Time:</div>
+        <div id = "moveTimer"></div>
+        <div id = "totalTimerTitle">Total Time:</div>
+        <div id = "totalTimer"></div>
+    </div>
+    
+    <div id = "camp">This is the camp.</div>
+    <div class = "pieces" id = "A1" name = "9" draggable="true" ondragstart="initialDrag(event)">司令</div><h5></h5>
+    <div class = "pieces" id = "A2" name = "8" draggable="true" ondragstart="initialDrag(event)">軍長</div><h5></h5>
+    <div class = "pieces" id = "A3" name = "7" draggable="true" ondragstart="initialDrag(event)">師長</div><h5></h5>
+    <div class = "pieces" id = "A4" name = "7" draggable="true" ondragstart="initialDrag(event)">師長</div><h5></h5>
+    <div class = "pieces" id = "A5" name = "6" draggable="true" ondragstart="initialDrag(event)">旅長</div>
+
+
+    <div class = "pieces" id = "A6" name = "6" draggable="true" ondragstart="initialDrag(event)">旅長</div><h5></h5>
+    <div class = "pieces" id = "A7" name = "5" draggable="true" ondragstart="initialDrag(event)">團長</div><h5></h5>
+    <div class = "pieces" id = "A8" name = "5" draggable="true" ondragstart="initialDrag(event)">團長</div><h5></h5>
+    <div class = "pieces" id = "A9" name = "4" draggable="true" ondragstart="initialDrag(event)">營長</div><h5></h5>
+    <div class = "pieces" id = "A10" name = "4" draggable="true" ondragstart="initialDrag(event)">營長</div>
+
+
+    <div class = "pieces" id = "A11" name = "3" draggable="true" ondragstart="initialDrag(event)">連長</div><h5></h5>
+    <div class = "pieces" id = "A12" name = "3" draggable="true" ondragstart="initialDrag(event)">連長</div><h5></h5>
+    <div class = "pieces" id = "A13" name = "3" draggable="true" ondragstart="initialDrag(event)">連長</div><h5></h5>
+    <div class = "pieces" id = "A14" name = "2" draggable="true" ondragstart="initialDrag(event)">排長</div><h5></h5>
+    <div class = "pieces" id = "A15" name = "2" draggable="true" ondragstart="initialDrag(event)">排長</div>
+
+
+    <div class = "pieces" id = "A16" name = "2" draggable="true" ondragstart="initialDrag(event)">排長</div><h5></h5>
+    <div class = "pieces" id = "A17" name = "boom" draggable="true" ondragstart="initialDrag(event)">炸彈</div><h5></h5>
+    <div class = "pieces" id = "A18" name = "boom" draggable="true" ondragstart="initialDrag(event)">炸彈</div><h5></h5>
+    <div class = "pieces" id = "A19" name = "1" draggable="true" ondragstart="initialDrag(event)">工兵</div><h5></h5>
+    <div class = "pieces" id = "A20" name = "1" draggable="true" ondragstart="initialDrag(event)">工兵</div>
+
+    <div class = "pieces" id = "A21" name = "1" draggable="true" ondragstart="initialDrag(event)">工兵</div><h5></h5>
+    <div class = "pieces" id = "A22" name = "mine" draggable="true" ondragstart="initialDrag(event)">地雷</div><h5></h5>
+    <div class = "pieces" id = "A23" name = "mine" draggable="true" ondragstart="initialDrag(event)">地雷</div><h5></h5>
+    <div class = "pieces" id = "A24" name = "mine" draggable="true" ondragstart="initialDrag(event)">地雷</div>
+    <div class = "pieces" id = "A25" name = "flag" draggable="true" ondragstart="initialDrag(event)">軍棋</div>
+
+    <div id = "soul1">This is the grave.</div>
+    <div id = "grave1"></div>
+    <div id = "grave2"></div>
+    <div id = "grave3"></div>
+    <div id = "grave4"></div>
+    <div id = "grave5"></div>
+    <div class = "epieces p15" id = "ESiLing" name="9">司令</div>
+    <div class = "epieces p04" id = "EJunZhang" name = "8">軍長</div>
+    <div class = "epieces p05" id = "EShiZhang1" name = "7">師長</div>
+    <div class = "epieces p25" id = "EShiZhang2" name = "7">師長</div>
+    <div class = "epieces p35" id = "ELvZhang1" name = "6">旅長</div>
+    <div class = "epieces p02" id = "ELvZhang2" name = "6">旅長</div>
+    <div class = "epieces p45" id = "ETuanZhang1" name = "5">團長</div>
+    <div class = "epieces p21" id = "ETuanZhang2" name = "5">團長</div>
+    <div class = "epieces p22" id = "EYingZhang1" name = "4">營長</div>
+    <div class = "epieces p24" id = "EYingZhang2" name = "4">營長</div>
+    <div class = "epieces p33" id = "ELianZhang1" name = "3">連長</div>
+    <div class = "epieces p43" id = "ELianZhang2" name = "3">連長</div>
+    <div class = "epieces p42" id = "ELianZhang3" name = "3">連長</div>
+    <div class = "epieces p40" id = "EPaiZhang1" name = "2">排長</div>
+    <div class = "epieces p30" id = "EPaiZhang2" name = "2">排長</div>
+    <div class = "epieces p44" id = "EPaiZhang3" name = "2">排長</div>
+    <div class = "epieces p01" id = "EZhaDan1" name = "boom">炸彈</div>
+    <div class = "epieces p03" id = "EZhaDan2" name = "boom">炸彈</div>
+    <div class = "epieces p00" id = "EGongBing1" name = "1">工兵</div>
+    <div class = "epieces p11" id = "EGongBing2" name = "1">工兵</div>
+    <div class = "epieces p13" id = "EGongBing3" name = "1">工兵</div>
+    <div class = "epieces p31" id = "EDiLei1" name = "mine">地雷</div>
+    <div class = "epieces p41" id = "EDiLei2" name = "mine">地雷</div>
+    <div class = "epieces p20" id = "EDiLei3" name = "mine">地雷</div>
+    <div class = "epieces p10" id = "EJunQi" name = "flag">軍棋</div>
+    <div class = "dead p12" name = "road">行营</div>
+    <div class = "dead p32" name = "road">行营</div>
+    <div class = "dead p14" name = "road">行营</div>
+    <div class = "dead p23" name = "road">行营</div>
+    <div class = "dead p34" name = "road">行营</div>
+    
+    
+    <div class = "empty p08"></div>
+    <div class = "empty p18"></div>
+    <div class = "empty p28"></div>
+    <div class = "empty p38"></div>
+    <div class = "empty p48"></div>
+    <div class = "empty p09 boom"></div>
+    <div class = "empty p112 boom mine"></div>
+    <div class = "empty p29 boom"></div>
+    <div class = "empty p312 boom mine"></div>
+    <div class = "empty p49 boom"></div>
+    <div class = "empty p010 boom"></div>
+    <div class = "empty p211 boom"></div>
+    <div class = "empty p410 boom"></div>
+    <div class = "empty p011 boom"></div>
+    <div class = "empty p110 boom"></div>
+    <div class = "empty p310 boom"></div>
+    <div class = "empty p411 boom"></div>
+    <div class = "empty p012 boom mine"></div>
+    <div class = "empty p212 boom mine"></div>
+    <div class = "empty p412 boom mine"></div>
+    <div class = "empty p013 boom mine"></div>
+    <div class = "empty p113 boom mine"></div>
+    <div class = "empty p213 boom mine"></div>
+    <div class = "empty p313 boom mine"></div>
+    <div class = "empty p413 boom mine"></div>
+    <div class = "dead p19" name = "road"></div>
+    <div class = "dead p39" name = "road"></div>
+    <div class = "dead p111" name = "road"></div>
+    <div class = "dead p210" name = "road"></div>
+    <div class = "dead p311" name = "road"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

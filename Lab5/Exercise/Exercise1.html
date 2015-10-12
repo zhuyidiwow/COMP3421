@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COMP3421_Lab5_Exercise1</title>
+    <script>
+    var i = 0;
+    function leftClick() {
+        i--;
+        if (i < 0) {
+            i = 0;
+            alert("This is already the first CD!");
+        }
+        displayCD();
+    }
+    function rightClick() {
+        i++;
+        if (i > 25) {
+            i = 25;
+            alert("This is already the last CD!");
+        }
+        displayCD();
+    }
+    function displayCD() {
+        if (window.XMLHttpRequest) {//code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET", "cd_catalog.xml", false);
+        xmlhttp.send();
+        var XMLDocument = xmlhttp.responseXML;
+
+        var x = XMLDocument.getElementsByTagName("CD");
+        document.getElementById("p1").innerHTML =
+                "Artist: " + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "<br>" +"Title: " + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "<br>" +"Year: " + x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+    }
+    </script>
+</head>
+<body onload="displayCD()">
+    <p id="p1"></p>
+    <button type="button" onclick="leftClick()">&lt;&lt;</button>
+    <button type="button" onclick="rightClick()">&gt;&gt;</button>
+</body>
+</html>
